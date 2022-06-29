@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <modal name="advanced_inventory_modal">
+        <fieldset name="stock_data">
+            <container name="container_mppo_typeof_delivery_time">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="formElement" xsi:type="string">container</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
+                        <item name="label" xsi:type="string" translate="true">Delivery Date/ Delivery Time</item>
+                        <item name="dataScope" xsi:type="string"/>
+                        <item name="sortOrder" xsi:type="number">830</item>
+                        <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">${$.provider}:data.product.stock_data.backorders</item>
+                        </item>
+                    </item>
+                </argument>
+                <field name="mppo_typeof_delivery_time">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true">Delivery Date/ Delivery Time</item>
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                            <item name="dataScope" xsi:type="string">mppo_typeof_delivery_time</item>
+                        </item>
+                        <item name="options" xsi:type="object">MKD\MageplazaPreOrder\Model\Config\Source\Delivery</item>
+                    </argument>
+                </field>
+            </container>
+            <container name="container_mppo_delivery_date">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="formElement" xsi:type="string">container</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
+                        <item name="label" xsi:type="string" translate="true">Delivery Date</item>
+                        <item name="dataScope" xsi:type="string"/>
+                        <item name="sortOrder" xsi:type="number">840</item>
+                        <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">${$.provider}:data.product.stock_data.delivery</item>
+                        </item>
+                    </item>
+                </argument>
+                <field name="mppo_delivery_date">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true">Delivery Date</item>
+                            <item name="formElement" xsi:type="string">date</item>
+                            <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                            <item name="dataScope" xsi:type="string">mppo_delivery_date</item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+            <container name="container_mppo_delivery_time">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="formElement" xsi:type="string">container</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
+                        <item name="label" xsi:type="string" translate="true">Delivery Time (days)</item>
+                        <item name="dataScope" xsi:type="string"/>
+                        <item name="sortOrder" xsi:type="number">850</item>
+                        <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">${$.provider}:data.product.stock_data.delivery</item>
+                        </item>
+                    </item>
+                </argument>
+                <field name="mppo_delivery_time">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="label" xsi:type="string" translate="true">Delivery Time (days)</item>
+                            <item name="formElement" xsi:type="string">input</item>
+                            <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                            <item name="dataScope" xsi:type="string">mppo_delivery_time</item>
+                        </item>
+                    </argument>
+                </field>
+            </container>
+        </fieldset>
+    </modal>
+</form>

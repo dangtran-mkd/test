@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_PreOrder
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="mppreorder" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pre-order</label>
+            <tab>mageplaza</tab>
+            <resource>Mageplaza_PreOrder::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Select <b>Yes</b> to enable this module.]]></comment>
+                </field>
+                <field id="apply_product" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Apply Pre-order for Products</label>
+                    <source_model>Mageplaza\PreOrder\Model\Config\Source\ApplyProduct</source_model>
+                    <comment model="Mageplaza\PreOrder\Model\Field\ApplyProductComment"/>
+                </field>
+                <field id="apply_customer_group" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Apply Pre-order for Customer Group(s)</label>
+                    <source_model>Magento\Customer\Model\ResourceModel\Group\Collection</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+            <group id="display" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display Configuration</label>
+                <group id="preorder" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-order Display Configuration</label>
+                    <field id="mppo_add_to_cart_label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label for Add-to-cart button</label>
+                        <comment>If empty, the default label "Add to Cart" will be used.</comment>
+                    </field>
+                    <field id="mppo_stock_status_label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Stock Status Label</label>
+                        <comment><![CDATA[If empty, no label will be shown. Available variables:<br/>{{short_date}} - the delivery date set in short format. Ex: 11/20/2019.<br/>{{long_date}} - the delivery date in long format. Ex: Nov 20, 2019.<br/>{{day}} - the number of days from current day to the delivery date.]]></comment>
+                    </field>
+                    <field id="stock_status_page" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Show Stock Status Label On</label>
+                        <source_model>Mageplaza\PreOrder\Model\Config\Source\PreOrderStockStatusPage</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="checkout_notice_label" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Checkout Notice</label>
+                    </field>
+                    <field id="checkout_notice_page" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Show Checkout Notice On</label>
+                        <source_model>Mageplaza\PreOrder\Model\Config\Source\CheckoutNoticePage</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="order_notice_label" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Order Notice</label>
+                    </field>
+                    <field id="order_notice_page" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Show Order Notice On</label>
+                        <source_model>Mageplaza\PreOrder\Model\Config\Source\OrderNoticePage</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="order_notice_delivery" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Delivery Date/ Delivery Time</label>
+                        <source_model>MKD\MageplazaPreOrder\Model\Config\Source\Delivery</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                </group>
+                <group id="backorder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Backorder Display Configuration</label>
+                    <field id="mppo_add_to_cart_label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Label for Add-to-cart button</label>
+                        <comment>If empty, the default label "Add to Cart" will be used.</comment>
+                    </field>
+                    <field id="mppo_stock_status_label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Stock Status Label</label>
+                        <comment><![CDATA[If empty, no label will be shown. Available variables:<br/>{{short_date}} - the delivery date set in short format. Ex: 11/20/2019.<br/>{{long_date}} - the delivery date in long format. Ex: Nov 20, 2019.<br/>{{day}} - the number of days from current day to the delivery date.]]></comment>
+                    </field>
+                    <field id="stock_status_page" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Show Stock Status Label On</label>
+                        <source_model>Mageplaza\PreOrder\Model\Config\Source\BackorderStockStatusPage</source_model>
+                        <can_be_empty>1</can_be_empty>
+                    </field>
+                    <field id="cart_item_notice" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Cart Item Notification</label>
+                        <comment><![CDATA[If empty, Magento backorder notification will be shown. Available variables:<br/>{{name}} - the name of the backorder product.<br/>{{qty}} - the backorder quantity.]]></comment>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>
