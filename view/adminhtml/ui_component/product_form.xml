@@ -16,6 +16,19 @@
                         </item>
                     </item>
                 </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="formElement" xsi:type="string">container</item>
+                        <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
+                        <item name="label" xsi:type="string" translate="true">Delivery Date/ Delivery Time</item>
+                        <item name="dataScope" xsi:type="string"/>
+                        <item name="sortOrder" xsi:type="number">830</item>
+                        <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                        <item name="imports" xsi:type="array">
+                            <item name="visible" xsi:type="string">${$.provider}:data.product.stock_data.backorders</item>
+                        </item>
+                    </item>
+                </argument>
                 <field name="mppo_typeof_delivery_time">
                     <argument name="data" xsi:type="array">
                         <item name="config" xsi:type="array">
