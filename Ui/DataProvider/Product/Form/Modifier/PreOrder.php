@@ -22,6 +22,9 @@ class PreOrder extends \Mageplaza\PreOrder\Ui\DataProvider\Product\Form\Modifier
         if (!isset($product['stock_data']['backorders'])) {
             return $data;
         }
+        if (!isset($product['stock_data']['backorders'])) {
+            return $data;
+        }
 
         $type = $product['stock_data']['backorders'];
 
