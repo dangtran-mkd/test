@@ -10,6 +10,13 @@ define(['uiRegistry'], function (registry) {
 
                 return this;
             },
+            initialize: function () {
+                this._super();
+
+                this.toggleDeliveryElem();
+
+                return this;
+            },
 
             onUpdate: function () {
                 this._super();
